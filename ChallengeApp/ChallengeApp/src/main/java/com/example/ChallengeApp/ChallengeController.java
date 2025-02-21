@@ -27,16 +27,18 @@ public class ChallengeController {
 
     }
     @GetMapping("/challenges/{month}")
-    public Challenge getChallenge(@PathVariable String month){
+    public Challenge getChallenge(@PathVariable String month) {
         Challenge challenge = challengeService.getChallenge(month);
-        if (challenge != null){
+        if (challenge != null) {
             return challenge;
-        }else{
-            return null;
+        } else {
+            return null; // You could return ResponseEntity.notFound() here instead of null.
         }
-
     }
 
 
 }
+
+
+
 
